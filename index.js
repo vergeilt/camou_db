@@ -1,7 +1,7 @@
 const fs = require("fs");
 const initSqlJs = require("./wasm/sql-wasm.js");
 
-const DB_PATH = "./resources/camou_db/db.sqlite";
+const DB_PATH = "./resources/[camou]/camou_db/db.sqlite";
 const WARN_TIME = 120;
 const VERBOSE = true;
 
@@ -9,7 +9,14 @@ const log = (...args) => VERBOSE && console.log(...args);
 
 async function main() {
     const SQL = await initSqlJs();
-    const db = new SQL.Database(fs.readFileSync(DB_PATH));
+    let db
+
+    if (fs.existsSync(DB_PATH)) {
+        db = new SQL.Database(fs.readFileSync(DB_PATH));
+    } else {
+        db = new SQL.Database();
+        fs.writeFileSync(DB_PATH, Buffer.from(db.export()));
+    }
 
     const saveDb = () => {
         log("Saving database");
