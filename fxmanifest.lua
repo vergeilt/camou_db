@@ -9,12 +9,6 @@ version '1.0'
 server_only 'yes'
 
 server_scripts {
-    'index.js'
-}
-
-convar_category 'camou_db' {
-    'Config',
-    {
-        { 'Database Path', 'db_path', 'CV_STRING', '/db/camou.db' }
-    }
+    'index.js',
+    'exports.lua'
 }
