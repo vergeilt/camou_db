@@ -3,6 +3,7 @@ game 'gta5'
 lua54 'yes'
 
 author 'camou <vergeilt>'
+name 'camou_db'
 description 'SQLite database library for FiveM'
 version '1.0'
 server_only 'yes'
@@ -14,6 +15,6 @@ server_scripts {
 convar_category 'camou_db' {
     'Config',
     {
-        { 'Database Path', 'db_path', 'CV_STRING', '/db/database.sqlite' }
+        { 'Database Path', 'db_path', 'CV_STRING', '/db/camou.db' }
     }
 }

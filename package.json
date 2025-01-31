@@ -1,0 +1,24 @@
+{
+  "name": "camou_db",
+  "version": "1.0",
+  "description": "SQLite database library for FiveM",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vergeilt/camou_db.git"
+  },
+  "keywords": [
+    "fivem",
+    "sqlite",
+    "database"
+  ],
+  "author": "camou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vergeilt/camou_db/issues"
+  },
+  "homepage": "https://github.com/vergeilt/camou_db#readme",
+  "dependencies": {
+    "better-sqlite3": "^11.8.1"
+  }
+}
